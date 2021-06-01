@@ -12,11 +12,18 @@ namespace Infrastructure.Configuration
             builder.ToTable("Orders");
             builder.HasKey(x => x.Id);
             builder.Ignore(x => x.Events);
-            builder.OwnsOne(x => x.Address, a => 
+
+            builder.OwnsOne(o => o.DeliveryAddress, a =>
+             {
+                 a.Property<int>("OrderId").UseHiLo("orderseq");
+                 a.WithOwner();
+             });
+            builder.OwnsOne(o => o.CardInformation, a =>
             {
                 a.Property<int>("OrderId").UseHiLo("orderseq");
                 a.WithOwner();
             });
+
             builder.HasOne<Buyer>()
             .WithMany()
             .IsRequired()

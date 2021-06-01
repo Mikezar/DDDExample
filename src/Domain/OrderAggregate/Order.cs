@@ -9,19 +9,23 @@ namespace Domain.OrderAggregate
     {
         private List<OrderItem> _orderItems;
         public int BuyerId { get; private set; }
-        public DeliveryAddress Address { get; private set; }
+        public DeliveryAddress DeliveryAddress { get; private set; }
         public CardInformation CardInformation { get; private set; }
         public int StatusId { get; private set; }
         public string PaymentId {get; private set;}
-        public decimal TotalSum => _orderItems.Sum(o => o.Quantity * o.Price);
         
         public IReadOnlyCollection<OrderItem> Items => _orderItems;
 
-        public Order(int buyerId, CardInformation cardInformation, DeliveryAddress address)
+        protected Order()
         {
             _orderItems = new List<OrderItem>();
+        }
+
+        public Order(int buyerId, CardInformation card, DeliveryAddress address) : this()
+        {
             BuyerId = buyerId;
-            Address = address;
+            DeliveryAddress = address;
+            CardInformation = card;
             StatusId = OrderStatus.Created.Id;
         }
 
@@ -55,5 +59,7 @@ namespace Domain.OrderAggregate
         {
             PaymentId = paymentId;
         }
+
+        public decimal GetTotaslSum() => _orderItems.Sum(o => o.Quantity * o.Price);
     }
 }

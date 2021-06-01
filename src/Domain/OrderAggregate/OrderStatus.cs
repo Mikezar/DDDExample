@@ -9,7 +9,7 @@ namespace Domain.OrderAggregate
         public static OrderStatus Done => new OrderStatus(3, nameof(Done));
         public static OrderStatus Cancelled => new OrderStatus(4, nameof(Cancelled));
 
-        public OrderStatus(ushort id, string name) : base(id, name)
+        public OrderStatus(int id, string name) : base(id, name)
         {
 
         }

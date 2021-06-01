@@ -26,6 +26,7 @@ namespace Infrastructure.Db
         {
             _mediator = mediator;
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new BuyerConfiguration());
@@ -55,7 +56,7 @@ namespace Infrastructure.Db
             public DDDContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<DDDContext>()
-                .UseNpgsql(args[0]);
+                .UseNpgsql("User ID=postgres;Password=.;Host=localhost;Port=5432;Database=HopShop;Pooling=true;");
 
                 return new DDDContext(optionsBuilder.Options, null);
             }

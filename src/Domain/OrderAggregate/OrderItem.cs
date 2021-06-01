@@ -4,10 +4,10 @@ namespace Domain.OrderAggregate
 {
     public class OrderItem : Entity
     {
-        public int ProductId { get; }
-        public decimal Price { get; }
-        public decimal Discount { get; }
-        public ushort Quantity {get;}
+        public int ProductId { get; private set; }
+        public decimal Price { get; private set; }
+        public decimal Discount { get; private set; }
+        public ushort Quantity {get; private set; }
 
         public OrderItem(int productId, decimal price, decimal discount, ushort quantity)
         {

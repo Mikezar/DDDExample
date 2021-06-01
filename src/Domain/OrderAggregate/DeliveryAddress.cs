@@ -9,7 +9,9 @@ namespace Domain.OrderAggregate
         public string City {get; private set;}
         public string Street {get; private set;}
         public string HouseNumber {get; private set;}
-        
+
+        public DeliveryAddress() { }
+
         public DeliveryAddress(string state, string city, string street, string houseNumber)
         {
             if (string.IsNullOrEmpty(state)) throw new ArgumentNullException(nameof(state));

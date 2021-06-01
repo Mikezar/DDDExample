@@ -2,10 +2,10 @@ namespace Domain.Abstract
 {
     public abstract class Enumeration
     {
-        public ushort Id { get; }
-        public string Name { get; }
+        public int Id { get; private set; }
+        public string Name { get; private set; }
 
-        public Enumeration(ushort id, string name)
+        public Enumeration(int id, string name)
         {
             Id = id;
             Name = name;
