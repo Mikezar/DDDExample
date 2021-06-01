@@ -1,6 +1,7 @@
 ﻿using Domain.Abstract;
+using Domain.BuyerAggregate;
 
-namespace Domain.BuyerAggregate
+namespace Infrastructure.Repositories
 {
     public interface IBuyerRepository : IRepository<Buyer>
     {
