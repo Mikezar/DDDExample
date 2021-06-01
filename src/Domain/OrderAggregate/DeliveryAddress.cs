@@ -5,10 +5,10 @@ namespace Domain.OrderAggregate
 {
     public class DeliveryAddress : ValueObject
     {
-        public string State {get; }
-        public string City {get; }
-        public string Street {get; }
-        public string HouseNumber {get; }
+        public string State {get; private set; }
+        public string City {get; private set;}
+        public string Street {get; private set;}
+        public string HouseNumber {get; private set;}
         
         public DeliveryAddress(string state, string city, string street, string houseNumber)
         {

@@ -27,5 +27,9 @@ namespace Domain.Abstract
 
             _events.Add(notification);
         }
+
+        public void ClearEvents(){
+            _events = null;
+        }
     }
 }
