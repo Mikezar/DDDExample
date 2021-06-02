@@ -1,5 +1,4 @@
-﻿using Domain.Abstract;
-using Domain.OrderAggregate;
+﻿using Domain.OrderAggregate;
 
 namespace Infrastructure.Repositories
 {

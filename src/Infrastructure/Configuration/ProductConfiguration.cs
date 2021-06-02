@@ -8,7 +8,7 @@ namespace Infrastructure.Configuration
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.ToTable("Producst");
+            builder.ToTable("Products");
             builder.HasKey(x => x.Id);
             builder.Ignore(x => x.Events);
         }

@@ -6,21 +6,21 @@ namespace Infrastructure.Repositories
 {
     public abstract class BaseRepository<TAggregate> : IRepository<TAggregate> where TAggregate : class, IAggregateRoot
     {
-        private readonly DDDContext _context;
+        protected readonly DDDContext Context;
 
         public BaseRepository(DDDContext context)
         {
-            _context = context;
+            Context = context;
         }
 
         public TAggregate Add(TAggregate aggregate)
         {
-            return _context.Set<TAggregate>().Add(aggregate).Entity;
+            return Context.Set<TAggregate>().Add(aggregate).Entity;
         }
 
         public TAggregate Update(TAggregate aggregate)
         {
-            _context.Entry(aggregate).State = EntityState.Modified;
+            Context.Entry(aggregate).State = EntityState.Modified;
 
             return aggregate;
         }

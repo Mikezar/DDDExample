@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
 
-namespace Domain.Abstract
+namespace Infrastructure.Db
 {
     public interface IUnitOfWork
     {
-         Task SaveChangesAsync();
+        Task SaveChangesAsync();
     }
 }

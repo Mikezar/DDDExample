@@ -1,4 +1,6 @@
-namespace Domain.Abstract
+using Domain.Abstract;
+
+namespace Infrastructure.Repositories
 {
     public interface IRepository<TAggregate> where TAggregate : IAggregateRoot
     {

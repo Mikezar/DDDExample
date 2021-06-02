@@ -5,3 +5,7 @@
 /src/.vs/DDDExample/v16
 /.vs/DDDExample/v16
 /.vs
+/src/.vs/DDDExample/DesignTimeBuild
+[Bb]in
+[Oo]bj
+*.user

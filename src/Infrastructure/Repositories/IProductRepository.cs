@@ -1,5 +1,4 @@
-﻿using Domain.Abstract;
-using Domain.ProductAggregate;
+﻿using Domain.ProductAggregate;
 
 namespace Infrastructure.Repositories
 {
