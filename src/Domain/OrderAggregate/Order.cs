@@ -14,7 +14,7 @@ namespace Domain.OrderAggregate
         public int StatusId { get; private set; }
         public string PaymentId {get; private set;}
         
-        public IReadOnlyCollection<OrderItem> Items => _orderItems;
+        public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
 
         protected Order()
         {

@@ -33,10 +33,12 @@ namespace Infrastructure.Configuration
             .IsRequired()
             .HasForeignKey(x => x.StatusId);
 
-            builder.HasMany<OrderItem>()
+            builder.HasMany<OrderItem>(x => x.OrderItems)
             .WithOne()
             .IsRequired()
             .HasForeignKey("OrderId");
+
+            builder.Metadata.FindNavigation(nameof(Order.OrderItems)).SetPropertyAccessMode(PropertyAccessMode.Field);
         }
     }
 }

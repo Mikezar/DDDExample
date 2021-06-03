@@ -56,7 +56,7 @@ namespace Infrastructure.Db
             public DDDContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<DDDContext>()
-                .UseNpgsql("User ID=postgres;Password=.;Host=localhost;Port=5432;Database=DDDExample;Pooling=true;");
+                .UseNpgsql("User ID=postgres;Password=116833;Host=localhost;Port=5432;Database=DDDExample;Pooling=true;");
 
                 return new DDDContext(optionsBuilder.Options, null);
             }

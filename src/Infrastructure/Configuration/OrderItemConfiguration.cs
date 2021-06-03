@@ -11,6 +11,7 @@ namespace Infrastructure.Configuration
             builder.ToTable("OrderItems");
             builder.HasKey(x => x.Id);
             builder.Ignore(x => x.Events);
+            builder.Property<int>("OrderId").IsRequired();
         }
     }
 }
