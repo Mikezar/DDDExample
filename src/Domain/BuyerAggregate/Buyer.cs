@@ -1,5 +1,5 @@
 using Domain.Abstract;
-using System;
+using Domain.Exceptions;
 
 namespace Domain.BuyerAggregate
 {
@@ -13,8 +13,8 @@ namespace Domain.BuyerAggregate
 
         public Buyer(string name, string email)
         {
-            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException(nameof(name));
-            if (name.Length > NameLength) throw new ArgumentNullException(nameof(name));
+            if (string.IsNullOrEmpty(name)) throw new DomainException(nameof(name));
+            if (name.Length > NameLength) throw new DomainException(nameof(name));
 
             Name = name;
 
@@ -25,8 +25,8 @@ namespace Domain.BuyerAggregate
 
         public void ChangeEmail(string email)
         {
-            if (string.IsNullOrEmpty(email)) throw new ArgumentNullException(nameof(email));
-            if (email.Length > EmailLength) throw new ArgumentNullException(nameof(email));
+            if (string.IsNullOrEmpty(email)) throw new DomainException(nameof(email));
+            if (email.Length > EmailLength) throw new DomainException(nameof(email));
 
             Email = email;
         }
